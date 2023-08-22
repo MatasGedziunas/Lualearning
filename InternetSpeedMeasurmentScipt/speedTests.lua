@@ -71,7 +71,6 @@ function speedTest.MeasureUploadSpeed(url)
     local success, result = pcall(function()
         testTime = socket.gettime()
         easy:perform()
-        --print("Size upload:" .. easy:getinfo(curl.INFO_SIZE_UPLOAD) * 8 / 1024 / 1024)
         local ul_speed = easy:getinfo(curl.INFO_SPEED_UPLOAD) / 1024 / 1024 * 8
         easy:close()
         return ul_speed
